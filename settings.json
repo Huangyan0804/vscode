@@ -3,6 +3,7 @@
     "editor.formatOnType": true, // 输入时就进行格式化，默认触发字符较少，分号可以触发
     "editor.snippetSuggestions": "top", // snippets代码优先显示补全
     "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
+    "terminal.integrated.shell.windows": "powershell.exe",
     "code-runner.executorMap": {
         "c": "cd $dir && clang $fileName -o $fileNameWithoutExt.exe -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c11 && $dir$fileNameWithoutExt",
         "cpp": "cd $dir && clang++ $fileName -o $fileNameWithoutExt.exe -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c++17 && $dir$fileNameWithoutExt"
@@ -13,16 +14,52 @@
     "C_Cpp.clang_format_sortIncludes": true, // 格式化时调整include的顺序（按字母排序）
     "C_Cpp.intelliSenseEngine": "Default", // 可以为Default或Tag Parser，后者较老，功能较简单。具体差别参考cpptools扩展文档
     "C_Cpp.errorSquiggles": "Disabled", // 因为有clang的lint，所以关掉
-    "C_Cpp.autocomplete": "Disabled", // 因为有clang的补全，所以关掉
-    "clang.cflags": [ // 控制c语言静态检测的参数
-        "--target=x86_64-w64-mingw",
-        "-std=c11"
-        //"-Wall"
-    ],
-    "clang.cxxflags": [ // 控制c++静态检测时的参数
-        "--target=x86_64-w64-mingw",
-        "-std=c++17"
-        //"-Wall"
-    ],
-    "clang.completion.enable": true // 效果效果比cpptools要好
+    "C_Cpp.autocomplete": "Disabled",
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "exception": "cpp",
+        "fstream": "cpp",
+        "initializer_list": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "optional": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "tuple": "cpp",
+        "typeinfo": "cpp",
+        "utility": "cpp",
+        "algorithm": "cpp"
+    }, // 因为有clang的补全，所以关掉
+    // "clang.cflags": [ // 控制c语言静态检测的参数
+    //     "--target=x86_64-w64-mingw",
+    //     "-std=c11"
+    //     //"-Wall"
+    // ],
+    // "clang.cxxflags": [ // 控制c++静态检测时的参数
+    //     "--target=x86_64-w64-mingw",
+    //     "-std=c++17"
+    //     //"-Wall"
+    // ],
+    // "clang.completion.enable": true // 效果效果比cpptools要好
 }
